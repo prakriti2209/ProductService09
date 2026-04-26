@@ -41,7 +41,7 @@ public class ProductController {
         return ResponseEntity.ok(updatedProduct);
     }
     @PutMapping("/reduce/{id}")
-    @PreAuthorize("hasAnyRole('ADMIN','USER')")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> reduceStock(@PathVariable Long id,
                                          @RequestParam int quantity) {
 
